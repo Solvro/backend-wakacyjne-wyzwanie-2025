@@ -45,6 +45,16 @@ Wszyscy jesteśmy ludźmi i każdemu może się zdarzyć jakaś losowa sytuacja.
 
 Jeszcze raz dziękujemy Wam za zaangażowanie i udział w kursie! Mamy nadzieję, że po jego zakończeniu będziecie gotowi na samodzielne tworzenie backendowych aplikacji i dalszy rozwój kariery 🚀
 
+## 🧑‍💻 Prowadzący
+- Szymon Stępień - koordynator ścieżki backend
+- Ala Bonar
+- Dawid Linek
+- Ignacy Smoliński
+- Jakub Czajkowski
+- Marek Kocik
+- Piotr Hirkyj
+- Przemek Bilski
+
 :copyright: KN Solvro 2025
 
 
