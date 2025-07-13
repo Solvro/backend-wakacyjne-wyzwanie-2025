@@ -20,7 +20,7 @@
 7. Zakończenie - prezentowanie projektów (tba.)
 
 ## 📖 Co trzeba wiedzieć przed przystąpieniem do wyzwania?
-- **GitHub** - do przejścia przez kurs wymagany jest konto na githubie i podstawowa znajomość zasad. Znajdują się w Handbook GitHub
+- **GitHub** - do przejścia przez kurs wymagany jest konto na githubie i podstawowa znajomość zasad. Znajdują się w [Handbook GitHub](https://docs.solvro.pl/git-github/intro/1-intro/)
 - **TS** - TypeScript jest podstawowym językiem używanym w kursie. [Total TypeScript](https://www.totaltypescript.com/books/total-typescript-essentials)
 - **Node JS** - jest to technologia umożliwiająca uruchomienie JS poza przeglądarką. Będziemy jej używać, aby budować nasz backend. Pobrać można na oficjalnej stronie https://nodejs.org/en/download
 - **IDE** - czyli w skrócie program w którym piszecie kod. Jeśli już macie wybranego faworyta, używajcie go. Jeśli obecnie piszecie kod w notatniku lub programie rodzaju notepad++ bardzo polecam przerzucenie się na [Visual Studio Code](https://code.visualstudio.com/).
