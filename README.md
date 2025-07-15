@@ -18,8 +18,8 @@
 0. Wstęp - (1 sierpnia 19:00, wyjątkowo Piątek!)
 1. Czym jest API? – REST, Headery, Standardy, Dokumentacja (5 sierpnia 19:00)
 2. Jak i gdzie przechowywać dane? – bazy danych, modele, struktury danych, seedery (12 sierpnia 19:00)
-2. Jak udostępniać i modyfikować dane? – CRUD, dokumentacja (19 sierpnia 19:00)
-3. Kim jesteś, skąd jesteś i czemu przychodzisz? - autoryzacja, walidatory (26 sierpnia 19:00)
+3. Jak udostępniać i modyfikować dane? – CRUD, dokumentacja (19 sierpnia 19:00)
+4. Kim jesteś, skąd jesteś i czemu przychodzisz? - autoryzacja, walidatory (26 sierpnia 19:00)
 5. Jak zaufać naszemu kodowi? - testy (2 września 19:00)
 6. Scrapowanie i procesy w tle – kolejki, maile, powiadomienia (9 września 19:00)
 7. Zakończenie - prezentowanie projektów (tba.)
@@ -44,10 +44,10 @@ Przykładowa struktura poniżej:
 main
 |
 |---jan-kowalski
-|    |----jan-kowalski_1
-|    |----jan-kowalski_2
+|    |----jan-kowalski-1
+|    |----jan-kowalski-2
 |---marek-wozny
-|    |----marek-wozny_1
+|    |----marek-wozny-1
 ```
 
 
