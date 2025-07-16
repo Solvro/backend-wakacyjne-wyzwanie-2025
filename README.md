@@ -1,7 +1,7 @@
 # Wakacyjne wyzwanie 2025 - ścieżka *BACKEND* - "Od zera do backend developera"
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7c32ec09-c2ac-4961-82e6-a98f04220510"/>
+  <img alt="Baner Solvro" src="https://github.com/user-attachments/assets/9ca8fd17-9e36-4a08-917d-54b0f3044002" />
 </p>
 
 ## 🎯 Założenia kursu
@@ -12,7 +12,8 @@
   - Projekt końcowy po ukończeniu cyklu spotkań
 - **Cele**
   - opanowanie podstaw frameworka [NestJS](https://nestjs.com/)
-  - poznanie konceptów opisanych w liście rozdziałów i implementacja ich
+  - poznanie uniwersalnych konceptów w tworzeniu serwisów backendowych
+  - wykonanie projektu Budżetownik do zarządzania budżetami wakacyjnych wyjazdów
 
 ## 📋 Lista rozdziałow
 0. Wstęp - (1 sierpnia 19:00, wyjątkowo Piątek!)
@@ -79,6 +80,8 @@ Jeszcze raz dziękujemy Wam za zaangażowanie i udział w kursie! Mamy nadzieję
 - Marek Kocik [huskyybtw - GitHub](https://github.com/huskyybtw)
 - Piotr Hirkyj [ibtyog - GitHub](https://github.com/ibtyog)
 - Przemek Bilski [pb3dpb3d - GitHub](https://github.com/pb3dpb3d)
+
+Dołączy również do nas mgr inż. Piotr Jóźwiak jako opiekun akademicki ścieżki Backend 🎉
 
 :copyright: KN Solvro 2025
 
