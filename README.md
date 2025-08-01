@@ -35,7 +35,7 @@
 ## 👩🏻‍💻 Jak pracujemy?
 
 ### Repozytorium
-Wszystkie zadania rozwiązujemy w przygotowanym do tego repozytorium [backend-wakacyjne-wyzwanie-2025-projekt](https://github.com/Solvro/backend-wakacyjne-wyzwanie-2025-projekt).
+Wszystkie zadania rozwiązujemy w przygotowanym do tego repozytorium [backend-wakacyjne-wyzwanie-2025-zadania](https://github.com/Solvro/backend-wakacyjne-wyzwanie-2025-zadania).
 
 ### Branche
 Na początku wyzwania każdy tworzy swój własny branch od głównego (np. `main`) z nazwą: `[imie]-[nazwisko]` (bez polskich znaków). Następnie przy pracy nad każdym kolejnym rozdziałem, tworzymy osobne branche ze swojego głównego brancha z nazwami: `[imie]-[nazwisko]-[nr_rozdziału]`.
