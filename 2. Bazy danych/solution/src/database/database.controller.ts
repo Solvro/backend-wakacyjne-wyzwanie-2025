@@ -1,16 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
-import { PrismaClient, Trip as TripModel } from '@prisma/client';
+import {Controller, Get, Post } from '@nestjs/common';
+import { Trip as TripModel } from '@prisma/client';
+import { DatabaseService } from './database.service';
 
 @Controller('database')
 export class DatabaseController {
-    private prisma = new PrismaClient();
+    constructor (private prisma : DatabaseService){}
 
-    @Get('/testRead')
+    @Get('/')
     async testRead(): Promise<TripModel[]> {
         return await this.prisma.trip.findMany();
     }
 
-    @Get('/testCreate')
+    @Post('/')
     async testCreate(): Promise<void> {
         await this.prisma.trip.create({
             data: {
