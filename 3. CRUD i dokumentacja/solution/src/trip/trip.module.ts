@@ -1,4 +1,4 @@
-import { DatabaseService } from "src/database/database.service";
+import { DatabaseModule } from "src/database/database.module";
 
 import { Module } from "@nestjs/common";
 
@@ -7,6 +7,7 @@ import { TripService } from "./trip.service";
 
 @Module({
   controllers: [TripController],
-  providers: [TripService, DatabaseService],
+  providers: [TripService],
+  imports: [DatabaseModule],
 })
 export class TripModule {}
