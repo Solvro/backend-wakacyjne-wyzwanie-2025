@@ -7,6 +7,11 @@ import {ValidationPipe} from "@nestjs/common";
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
     app.useGlobalPipes(new ValidationPipe())
+    app.enableCors({
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+        origin: 'http://localhost:5500',
+        preflightContinue: false,
+    });
     const config = new DocumentBuilder()
         .setTitle("Wakacyjne API")
         .setDescription("Wakacyjne API description")

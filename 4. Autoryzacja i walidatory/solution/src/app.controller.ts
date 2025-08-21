@@ -8,7 +8,7 @@ export class AppController {
     }
 
     @Get("backend")
-    @HttpCode(418)
+    @HttpCode(200)
     getHello() {
         return this.appService.getHello();
     }
