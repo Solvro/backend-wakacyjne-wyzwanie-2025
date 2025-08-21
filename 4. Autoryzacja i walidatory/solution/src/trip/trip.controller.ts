@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post,} from "@nestjs/common";
+import {Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Patch, Post,} from "@nestjs/common";
 import {ApiOperation, ApiResponse, ApiTags} from "@nestjs/swagger";
 
 import {CreateTripResponseDto} from "./dto/create-trip-reponse.dto";
@@ -34,8 +34,8 @@ export class TripController {
     }
 
     @Get(":id")
-    async findOne(@Param("id") id: string) {
-        return this.tripService.findOne(+id);
+    async findOne(@Param("id", ParseIntPipe) id: number) {
+        return this.tripService.findOne(id);
     }
 
     @Patch(":id")
