@@ -14,24 +14,24 @@ datasource db {
 }
 
 model Trip {
-  id            Int        @id @default(autoincrement())
+  id            Int           @id @default(autoincrement())
   name          String
   plannedBudget Float?
   expenses      Expense[]
   participants  Participant[]
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
 }
 
 model Expense {
-  id         Int      @id @default(autoincrement())
-  amount     Float
-  currency   String
-  category   Category
-  tripId     Int
-  trip       Trip     @relation(fields: [tripId], references: [id])
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id        Int      @id @default(autoincrement())
+  amount    Float
+  currency  String
+  category  Category
+  tripId    Int
+  trip      Trip     @relation(fields: [tripId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum Category {
@@ -42,13 +42,28 @@ enum Category {
   OTHER
 }
 
+enum Role {
+  USER
+  ADMIN
+}
+
 model Participant {
-  id          Int    @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   email       String
-  name        String?
+  User        User     @relation(fields: [email], references: [email])
   amountToPay Float
   tripId      Int
-  trip        Trip   @relation(fields: [tripId], references: [id])
+  trip        Trip     @relation(fields: [tripId], references: [id])
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model User {
+  email       String        @id
+  aboutMe     String?
+  password    String
+  role        Role
+  isEnabled   Boolean
+  name        String?
+  Participant Participant[]
 }

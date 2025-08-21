@@ -1,10 +1,11 @@
-import {Controller, Get, Post } from '@nestjs/common';
-import { Trip as TripModel } from '@prisma/client';
-import { DatabaseService } from './database.service';
+import {Controller, Get, Post} from '@nestjs/common';
+import {Trip as TripModel} from '@prisma/client';
+import {DatabaseService} from './database.service';
 
 @Controller('database')
 export class DatabaseController {
-    constructor (private prisma : DatabaseService){}
+    constructor(private prisma: DatabaseService) {
+    }
 
     @Get('/')
     async testRead(): Promise<TripModel[]> {

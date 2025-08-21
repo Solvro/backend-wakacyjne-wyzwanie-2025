@@ -1,28 +1,28 @@
-import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import {ApiProperty, ApiPropertyOptional} from "@nestjs/swagger";
 
 export class CreateTripResponseDto {
-  @ApiProperty()
-  id: number;
+    @ApiProperty()
+    id: number;
 
-  @ApiProperty()
-  name: string;
+    @ApiProperty()
+    name: string;
 
-  @ApiPropertyOptional()
-  plannedBudget?: number;
+    @ApiPropertyOptional()
+    plannedBudget?: number;
 
-  @ApiPropertyOptional({
-    isArray: true,
-  })
-  expenses?: unknown[];
+    @ApiPropertyOptional({
+        isArray: true,
+    })
+    expenses?: unknown[];
 
-  @ApiPropertyOptional({
-    isArray: true,
-  })
-  participants?: unknown[];
+    @ApiPropertyOptional({
+        isArray: true,
+    })
+    participants?: unknown[];
 
-  @ApiProperty()
-  createdAt: Date;
+    @ApiProperty()
+    createdAt: Date;
 
-  @ApiProperty()
-  updatedAt: Date;
+    @ApiProperty()
+    updatedAt: Date;
 }

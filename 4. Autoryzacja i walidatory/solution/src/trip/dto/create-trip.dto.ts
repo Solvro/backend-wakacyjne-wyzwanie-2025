@@ -1,19 +1,24 @@
-import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import {ApiProperty, ApiPropertyOptional} from "@nestjs/swagger";
+import {IsNumber, IsString, Length, Min} from "class-validator";
 
 export class CreateTripDto {
-  @ApiProperty()
-  name: string;
+    @ApiProperty()
+    @IsString()
+    @Length(3, 255)
+    name: string;
 
-  @ApiPropertyOptional()
-  plannedBudget?: number;
+    @ApiPropertyOptional()
+    @IsNumber()
+    @Min(0)
+    plannedBudget?: number;
 
-  @ApiPropertyOptional({
-    isArray: true,
-  })
-  expenses?: unknown[];
-  
-  @ApiPropertyOptional({
-    isArray: true,
-  })
-  participants?: unknown[];
+    @ApiPropertyOptional({
+        isArray: true,
+    })
+    expenses?: unknown[];
+
+    @ApiPropertyOptional({
+        isArray: true,
+    })
+    participants?: unknown[];
 }

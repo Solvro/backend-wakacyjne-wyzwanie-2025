@@ -1,1 +1,2 @@
-export class Trip {}
+export class Trip {
+}
