@@ -1,5 +1,5 @@
 import {ApiProperty, ApiPropertyOptional} from "@nestjs/swagger";
-import {IsNumber, IsString, Length, Min} from "class-validator";
+import {IsNumber, IsOptional, IsString, Length, Min} from "class-validator";
 
 export class CreateTripDto {
     @ApiProperty()
@@ -8,15 +8,18 @@ export class CreateTripDto {
     name: string;
 
     @ApiPropertyOptional()
+    @IsOptional()
     @IsNumber()
     @Min(0)
     plannedBudget?: number;
 
+    @IsOptional()
     @ApiPropertyOptional({
         isArray: true,
     })
     expenses?: unknown[];
 
+    @IsOptional()
     @ApiPropertyOptional({
         isArray: true,
     })

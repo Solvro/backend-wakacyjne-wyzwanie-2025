@@ -26,10 +26,10 @@ export class UserController {
     @UseGuards(AuthGuard)
     @HttpCode(HttpStatus.OK)
     @Patch("")
-    updateUserData(@Request() req: {
+    async updateUserData(@Request() request: {
         user: UserMetadata
     }, @Body() updateRequest: UserUpdateDto): Promise<UserUpdateResponseDto> {
-        return this.userService.updateUserData(req.user.email, updateRequest.newAboutMe, updateRequest.name);
+        return this.userService.updateUserData(request.user.email, updateRequest.newAboutMe, updateRequest.name);
     }
 
     @ApiOperation({
@@ -55,7 +55,7 @@ export class UserController {
     @HttpCode(HttpStatus.NO_CONTENT)
     @Post('disable/:email')
     @Roles(Role.ADMIN)
-    disableUser(@Param('email') email: string) {
+    async disableUser(@Param('email') email: string) {
         return this.userService.disableAccount(email);
     }
 
@@ -78,7 +78,7 @@ export class UserController {
     @HttpCode(HttpStatus.NO_CONTENT)
     @Post('enable/:email')
     @Roles(Role.ADMIN)
-    enableUser(@Param('email') email: string) {
+    async enableUser(@Param('email') email: string) {
         return this.userService.enableAccount(email);
     }
 

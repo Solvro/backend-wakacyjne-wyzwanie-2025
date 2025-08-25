@@ -14,8 +14,8 @@ export class AuthService {
 
     async validateToken(token: string): Promise<UserMetadata> {
         return token.startsWith(this.tokenPrefix) ?
-            await this.usersService.findMetadataOrFail(token.substring(this.tokenPrefix.length))
-            : Promise.reject("Invalid token");
+            await this.usersService.findMetadataOrFail(token.slice(this.tokenPrefix.length))
+            : Promise.reject(new Error("Invalid token"));
     }
 
     generateToken(email: string): string {
@@ -24,7 +24,7 @@ export class AuthService {
 
     async signIn(email: string, password: string): Promise<LoginResponseDto> {
         const user = await this.usersService.findOne(email);
-        if (user === null || !user.isEnabled || !await compare(password, user.password).catch(_ => Promise.resolve(false))) {
+        if (user === null || !user.isEnabled || !await compare(password, user.password).catch(() => false)) {
             throw new UnauthorizedException();
         }
         return {token: this.generateToken(user.email)};

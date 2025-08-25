@@ -1,4 +1,4 @@
-import {Role, User} from "@prisma/client";
+import type {Role, User} from "@prisma/client";
 
 export interface UserMetadata {
     email: string;
