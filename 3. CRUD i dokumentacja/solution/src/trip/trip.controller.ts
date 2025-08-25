@@ -6,13 +6,13 @@ import {
   HttpCode,
   HttpStatus,
   Param,
-  Patch,
   Post,
+  Put,
 } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 
-import { CreateTripResponseDto } from "./dto/create-trip-reponse.dto";
 import { CreateTripDto } from "./dto/create-trip.dto";
+import { TripResponseDto } from "./dto/trip-reponse.dto";
 import { UpdateTripDto } from "./dto/update-trip.dto";
 import { TripService } from "./trip.service";
 
@@ -30,29 +30,101 @@ export class TripController {
   })
   @ApiResponse({
     status: 201,
-    description: "Trip created",
-    type: CreateTripResponseDto,
+    description: "Trip created successfully",
+    type: TripResponseDto,
+  })
+  @ApiResponse({
+    status: 400,
+    description: "Invalid input data",
   })
   async create(@Body() createTripDto: CreateTripDto) {
     return this.tripService.create(createTripDto);
   }
 
   @Get()
+  @ApiOperation({
+    summary: "Get all trips",
+    description:
+      "Retrieve a list of all trips in the system with their participants and expenses",
+  })
+  @ApiResponse({
+    status: 200,
+    description: "List of trips retrieved successfully",
+    type: [TripResponseDto],
+  })
   async findAll() {
     return this.tripService.findAll();
   }
 
   @Get(":id")
+  @ApiOperation({
+    summary: "Get trip by ID",
+    description:
+      "Retrieve detailed information about a specific trip including expenses and participants",
+  })
+  @ApiResponse({
+    status: 200,
+    description: "Trip details retrieved successfully",
+    type: TripResponseDto,
+  })
+  @ApiResponse({
+    status: 404,
+    description: "Trip not found",
+  })
   async findOne(@Param("id") id: string) {
     return this.tripService.findOne(+id);
   }
 
-  @Patch(":id")
+  @Get(":id/with-details")
+  @ApiOperation({
+    summary: "Get trip by ID with full details",
+    description:
+      "Retrieve complete trip information including all expenses and participants details",
+  })
+  @ApiResponse({
+    status: 200,
+    description: "Trip details with all relations retrieved successfully",
+    type: TripResponseDto,
+  })
+  @ApiResponse({
+    status: 404,
+    description: "Trip not found",
+  })
+  async findOneWithDetails(@Param("id") id: string) {
+    return this.tripService.findOneWithDetails(+id);
+  }
+
+  @Put(":id")
+  @ApiOperation({
+    summary: "Update trip details",
+    description: "Modify information for an existing trip",
+  })
+  @ApiResponse({
+    status: 200,
+    description: "Trip updated successfully",
+    type: TripResponseDto,
+  })
+  @ApiResponse({
+    status: 404,
+    description: "Trip not found",
+  })
   async update(@Param("id") id: string, @Body() updateTripDto: UpdateTripDto) {
     return this.tripService.update(+id, updateTripDto);
   }
 
   @Delete(":id")
+  @ApiOperation({
+    summary: "Delete a trip",
+    description: "Remove a trip and all its associated data from the system",
+  })
+  @ApiResponse({
+    status: 200,
+    description: "Trip deleted successfully",
+  })
+  @ApiResponse({
+    status: 404,
+    description: "Trip not found",
+  })
   async remove(@Param("id") id: string) {
     return this.tripService.remove(+id);
   }
